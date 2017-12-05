@@ -33,6 +33,9 @@ function clickImg (value)
 	if (turn1==row*10+col)
 		return;
 
+	if (field[row] [col]==0)
+		return;
+
 	if (field[row] [col]>0)
 	{
 		var source="img/img"+field[row] [col]+".png";
