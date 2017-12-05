@@ -4,12 +4,13 @@
 		<META CHARSET="UTF-8">
 		<TITLE>PEXESO</TITLE>
 		<LINK REL="stylesheet" HREF="style/style.css">
+		<SCRIPT SRC="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></SCRIPT>
 		<SCRIPT SRC="script/script.js"></SCRIPT>
 	</HEAD>
 
 	<BODY ONLOAD="shuffle()">
 		<DIV>
-			<DIV CLASS="playersName" ID="">Player 1</DIV>
+			<DIV CLASS="playersName" ID="Player1" ONDBLCLICK="changeName(1)">Player 1</DIV>
 			<DIV CLASS="score" ID="score1">Score: 0</DIV>
 			<DIV>
 				<TABLE ID="tableP1"></TABLE>

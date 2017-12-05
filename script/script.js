@@ -136,3 +136,26 @@ function updateScore ()
 	else 
 		document.getElementById("score2").innerHTML="Score: "+score2;
 }
+
+function changeName (value)
+{
+	if (value==1)
+	{
+		var originName=$("#Player1").text();
+		$("#Player1").html("<INPUT TYPE=\"TEXT\">");
+		console.log(originName);
+	}
+
+}
+
+function confirmName (value)
+{
+	if (value==1)
+	{
+		var name=$("#inputP1").val();
+		if (name.trim().length==0)
+			$("#Player1").text("Player1");
+		else 
+			$("#Player1").text(name);
+	}
+}
