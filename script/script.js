@@ -2,6 +2,9 @@ var player=1;
 var field=[[1,1,2,2],[3,3,4,4],[5,5,6,6],[7,7,8,8]];
 var turn1=-1;
 var turn2=-1;
+var score1=0;
+var score2=0;
+var turnGuessed;
 
 function shuffle ()
 {
@@ -56,15 +59,27 @@ function checkSelectedCards ()
 
 	if (field[row1] [col1]==field[row2] [col2])
 	{
+		if (player==1)
+			score1++;
 
+		else 
+			score2++;
+
+		turnGuessed=turn1;
+		setTimeout(moveCard, 1500);
+		updateScore();
 	}
 
-	else 
-		setTimeout(turnBack (), 3000);
+	else
+	{
+		setTimeout(turnBack, 2000);
+		player=player==1?2:1;
+	}
 }
 
 function turnBack ()
 {
+	console.log("test");
 	var row1=Math.floor(turn1/10);
 	var col1=turn1%10;
 	var row2=Math.floor(turn2/10);
@@ -73,6 +88,48 @@ function turnBack ()
 	document.getElementById(imageID).src="img/back.png";
 	var imageID="img"+row2+col2;
 	document.getElementById(imageID).src="img/back.png";
-	turn1=1;
-	turn2=1;
+	turn1=-1;
+	turn2=-1;
+}
+
+function moveCard ()
+{
+	if (player==1)
+		var table=document.getElementById("tableP1");
+
+	else
+		table=document.getElementById("tableP2");
+
+	var row1=Math.floor(turn1/10);
+	var col1=turn1%10;
+	var row2=Math.floor(turn2/10);
+	var col2=turn2%10;
+
+	var imageSource="img/img"+field[row1] [col1]+".png";
+
+	var imageID="img"+row1+col1;
+	document.getElementById(imageID).src="img/blank.png";
+
+	imageID="img"+row2+col2;
+	document.getElementById(imageID).src="img/blank.png";
+
+	var row=table.insertRow(0);
+	var cell=row.insertCell(0);
+
+	cell.innerHTML="<IMG SRC=\""+imageSource+"\"WIDTH=\"75\">";
+
+	field[row1] [col1]=0;
+	field[row2] [col2]=0;
+
+	turn1=-1;
+	turn2=-1;
+}
+
+function updateScore ()
+{
+	if (player==1)
+		document.getElementById("score1").innerHTML="Score: "+score1;
+
+	else 
+		document.getElementById("score2").innerHTML="Score: "+score2;
 }
