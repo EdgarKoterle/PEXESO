@@ -6,18 +6,19 @@
 		<LINK REL="stylesheet" HREF="style/style.css">
 		<SCRIPT SRC="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></SCRIPT>
 		<SCRIPT SRC="script/script.js"></SCRIPT>
+		<LINK REL="stylesheet" HREF="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</HEAD>
 
 	<BODY ONLOAD="shuffle()">
-		<DIV>
+		<DIV CLASS="col-md-2" ALIGN="CENTER">
 			<DIV CLASS="playersName" ID="Player1" ONDBLCLICK="changeName(1)">Player 1</DIV>
 			<DIV CLASS="score" ID="score1">Score: 0</DIV>
 			<DIV>
 				<TABLE ID="tableP1"></TABLE>
 			</DIV>
 		</DIV>
-		<DIV ID="gameboard" ALIGN="CENTER">
-			<TABLE WIDTH="640" BORDER="0">
+		<DIV ID="gameboard" CLASS="col-md-8" ALIGN="CENTER">
+			<TABLE BORDER="0">
 				<TR>
 					<TD><IMG SRC="img/back.png" CLASS="card" ID="img00" ONCLICK="clickImg(00)" WIDTH="150"></TD>
 					<TD><IMG SRC="img/back.png" CLASS="card" ID="img01" ONCLICK="clickImg(01)" WIDTH="150"></TD>
@@ -47,7 +48,7 @@
 				</TR>
 			</TABLE>
 		</DIV>
-		<DIV>
+		<DIV CLASS="col-md-2" ALIGN="CENTER">
 			<DIV CLASS="playersName" ID="Player2" ONDBLCLICK="changeName(2)">Player 2</DIV>
 			<DIV CLASS="score" ID="score2">Score: 0</DIV>
 			<TABLE ID="tableP2"></TABLE>
