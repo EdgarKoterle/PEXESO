@@ -175,3 +175,47 @@ function confirmName (value)
 			$("#Player2").text(name);
 	}
 }
+
+/*$("document").ready (function())
+{
+	if (typeof(Storage)!=="undefined")
+	{
+		var value;
+		if (localStorage.visited)
+		{
+			value=localStorage.getItem("visited");
+			value++;
+		}
+
+		else 
+		{
+			localStorage.setItem("visited", "1");
+			value=1;
+		}
+
+		$("#visited").innerHTML(value);
+	}
+
+	else 
+	
+
+	
+}
+*/
+$("document").ready (function()
+{
+	$("#newGame").click(function()
+	{
+    	$("#options").fadeIn();
+	});
+
+	$("#cancel").click(function()
+	{
+   		$("#options").fadeOut();
+	});
+
+	$("#confirm").click(function() {
+    	location.reload();
+	});
+
+});
